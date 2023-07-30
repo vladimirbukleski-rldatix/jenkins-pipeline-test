@@ -1,15 +1,15 @@
 pipeline {
-    agent any
+    agent smith-inbound
 
     stages {
-        stage('1') {
+        stage('1 npm install') {
             steps {
-                echo 'Building..'
+                echo 'npm install ..'
             }
         }
-        stage('2') {
+        stage('2 nugget install') {
             steps {
-                echo 'Testing 123..'
+                echo 'nvm install..'
             }
         }
     }
