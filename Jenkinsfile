@@ -1,15 +1,28 @@
 pipeline {
     agent any
-
+    environment {
+        NPM_AUTH = credentials('npm-nexus')
+        NUGET_AUTH = credentials('nuget-nexus')
+    }
     stages {
-        stage('1 npm install') {
-            steps {
-                echo 'npm install ..'
-            }
-        }
-        stage('2 nugget install') {
-            steps {
-                echo 'nvm install..'
+        stage('Install Packages') {
+            parallel {
+                stage('Install NPM') {
+                    agent {
+                        label "npm"
+                    }
+                    steps {
+                        sh 'npm install'
+                    }
+                }
+                stage('Install Nuget') {
+                    agent {
+                        label "nuget"
+                    }
+                    steps {
+                        sh 'nuget install'
+                    }
+                }
             }
         }
     }
