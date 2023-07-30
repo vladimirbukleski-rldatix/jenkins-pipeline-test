@@ -1,5 +1,5 @@
 pipeline {
-    agent smith-inbound
+    agent any
 
     stages {
         stage('1 npm install') {
