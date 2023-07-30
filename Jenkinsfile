@@ -1,9 +1,6 @@
 pipeline {
     agent any
-    environment {
-        NPM_AUTH = credentials('npm-nexus')
-        NUGET_AUTH = credentials('nuget-nexus')
-    }
+
     stages {
         stage('Install Packages') {
             parallel {
