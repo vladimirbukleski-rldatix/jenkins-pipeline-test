@@ -6,7 +6,7 @@ pipeline {
             parallel{
                 stage('Install NPM') {
                     agent {
-                        label "npm"
+                        label "smith-inbound"
                     }
                     steps {
                         sh 'npm init --yes'
