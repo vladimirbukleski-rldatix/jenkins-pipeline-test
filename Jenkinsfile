@@ -17,7 +17,7 @@ pipeline {
 				}
 				stage('Install Nuget') {
 					agent {
-						label "npm"
+						label "nuget"
 					}
 					steps {
 						sh 'nuget install'
