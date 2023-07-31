@@ -13,14 +13,14 @@ pipeline {
                         sh 'npm install'
                     }
                 }
-                stage('Install Nuget') {
+                /*stage('Install Nuget') {
                     agent {
                         label "nuget"
                     }
                     steps {
                         sh 'nuget install'
                     }
-                }
+                }*/
             }
         }
     }
