@@ -20,8 +20,6 @@ pipeline {
 						label "nuget"
 					}
 					steps {
-                        sh 'curl -o /usr/local/bin/nuget.exe https://dist.nuget.org/win-x86-commandline/latest/nuget.exe -k'
-                        sh 'alias nuget="mono /usr/local/bin/nuget.exe"'
 						sh 'nuget install'
 					}
 				}
