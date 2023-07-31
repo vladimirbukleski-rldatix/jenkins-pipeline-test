@@ -9,6 +9,7 @@ pipeline {
                         label "npm"
                     }
                     steps {
+                        sh 'npm init --yes'
                         sh 'npm install'
                     }
                 }
