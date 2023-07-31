@@ -3,7 +3,7 @@ pipeline {
 
     stages {
         stage('Install Packages') {
-            
+            parallel{
                 stage('Install NPM') {
                     agent {
                         label "npm"
@@ -22,6 +22,7 @@ pipeline {
                     }
                 }*/
             }
+        }
     // ?
     }
 }
