@@ -20,6 +20,7 @@ pipeline {
 						label "nuget"
 					}
 					steps {
+                        sh 'nuget list'
 						sh 'nuget install'
 					}
 				}
