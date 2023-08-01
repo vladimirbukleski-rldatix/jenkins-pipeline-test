@@ -20,7 +20,8 @@ pipeline {
 						label "nuget"
 					}
 					steps {
-						sh 'nuget install'
+						sh "chmod +x -R ${env.WORKSPACE}"
+						sh 'mono /usr/local/bin/nuget install'
 					}
 				}
 			}
