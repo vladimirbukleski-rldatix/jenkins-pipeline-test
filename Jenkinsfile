@@ -21,8 +21,6 @@ pipeline {
 					}
 					steps {
 						sh "chmod +x -R ${env.WORKSPACE}"
-                        sh 'nuget config'
-                        sh 'nuget list'
 						sh 'nuget install'
 					}
 				}
